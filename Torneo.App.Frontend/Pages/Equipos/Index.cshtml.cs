@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Torneo.App.Persistencia;
 using Torneo.App.Dominio;
+using Torneo.App.Persistencia;
 
 namespace Torneo.App.Frontend.Pages.Equipos
 {
