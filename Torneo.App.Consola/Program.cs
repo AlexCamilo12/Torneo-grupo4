@@ -18,22 +18,22 @@ namespace Torneo.App.Consola
             {
                 Console.WriteLine("--------Menú-------\n");
 
-                Console.WriteLine("1. Inserte Municipio");
+                Console.WriteLine("1. Insertar Municipio");
                 Console.WriteLine("2. Mostrar Municipios\n");
 
-                Console.WriteLine("3. Inserte DT");
+                Console.WriteLine("3. Insertar DT");
                 Console.WriteLine("4. Mostrar DTs\n");
 
-                Console.WriteLine("5. Inserte Equipo");
+                Console.WriteLine("5. Insertar Equipo");
                 Console.WriteLine("6. Mostrar Equipos\n");
 
-                Console.WriteLine("7. Inserte Posicion");
+                Console.WriteLine("7. Insertar Posicion");
                 Console.WriteLine("8. Mostrar Posiciones\n");
 
-                Console.WriteLine("9. Inserte Jugador");
+                Console.WriteLine("9. Insertar Jugador");
                 Console.WriteLine("10. Mostrar Jugadores\n");
 
-                Console.WriteLine("11. Inserte Partido");
+                Console.WriteLine("11. Insertar Partido");
                 Console.WriteLine("12. Mostrar Partidos\n");
 
                 Console.WriteLine("0. Salir\n");

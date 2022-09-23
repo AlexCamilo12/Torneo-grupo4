@@ -2,8 +2,9 @@
 @model Torneo.App.Frontend.Pages.Equipos.DetailsModel
 @{
 }
-<h1>Detalle del equipo</h1>
-<table class="table table-striped">
+<h1>Detalle de Equipo</h1>
+<br>
+<table class="table table-sm">
     <tr>
         <th scope="col">Id</th>
         <td>@Model.equipo.Id</td>
@@ -21,4 +22,4 @@
         <td>@Model.equipo.DirectorTecnico.Nombre</td>
     </tr>
 </table>
-<a class="btn btn-secondary btn-lg" asp-page="./Index">Volver</a>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

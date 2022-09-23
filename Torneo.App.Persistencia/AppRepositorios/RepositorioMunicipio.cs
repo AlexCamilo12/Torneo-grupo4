@@ -15,7 +15,11 @@ namespace Torneo.App.Persistencia
 
         public IEnumerable<Municipio> GetAllMunicipios()
         {
-            return _dataContext.Municipios;
+            var municipios = _dataContext.Municipios
+            .Include(m => m.Equipos)
+            .ToList();
+
+            return municipios;
         }
 
         public Municipio GetMunicipio(int idMunicipio)
@@ -23,7 +27,7 @@ namespace Torneo.App.Persistencia
             var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
             return municipioEncontrado;
         }
-        
+
         public Municipio UpdateMunicipio(Municipio municipio)
         {
             var municipioEncontrado = _dataContext.Municipios.Find(municipio.Id);
@@ -34,7 +38,21 @@ namespace Torneo.App.Persistencia
             }
             return municipioEncontrado;
         }
+        public Municipio DeleteMunicipio(int idMunicipio)
+        {
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
+            if (municipioEncontrado != null)
+            {
+                _dataContext.Municipios.Remove(municipioEncontrado);
+                _dataContext.SaveChanges();
+            }
+            return municipioEncontrado;
+        }
 
-
+        IEnumerable<Municipio> IRepositorioMunicipio.SearchMunicipios(string nombre)
+        {
+            return _dataContext.Municipios
+                        .Where(p => p.Nombre.Contains(nombre));
+        }
     }
 }

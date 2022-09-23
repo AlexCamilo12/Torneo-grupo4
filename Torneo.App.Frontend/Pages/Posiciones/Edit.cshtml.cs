@@ -3,22 +3,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
-namespace Torneo.App.Frontend.Pages.Municipios
+namespace Torneo.App.Frontend.Pages.Posiciones
 {
     public class EditModel : PageModel
     {
-        private readonly IRepositorioMunicipio _repoMunicipio;
-        public Municipio municipio { get; set; }
+        private readonly IRepositorioPosicion _repoPosicion;
+        public Posicion posicion { get; set; }
 
-        public EditModel(IRepositorioMunicipio repoMunicipio)
+        public EditModel(IRepositorioPosicion repoPosicion)
         {
-            _repoMunicipio = repoMunicipio;
+            _repoPosicion = repoPosicion;
         }
-
         public IActionResult OnGet(int id)
         {
-            municipio = _repoMunicipio.GetMunicipio(id);
-            if (municipio == null)
+            posicion = _repoPosicion.GetPosicion(id);
+            if (posicion == null)
             {
                 return NotFound();
             }
@@ -28,11 +27,10 @@ namespace Torneo.App.Frontend.Pages.Municipios
             }
         }
 
-        public IActionResult OnPost(Municipio municipio)
+        public IActionResult OnPost(Posicion posicion)
         {
-            _repoMunicipio.UpdateMunicipio(municipio);
+            _repoPosicion.UpdatePosicion(posicion);
             return RedirectToPage("Index");
         }
     }
-
 }

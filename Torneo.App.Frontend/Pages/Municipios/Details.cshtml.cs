@@ -9,10 +9,12 @@ namespace Torneo.App.Frontend.Pages.Municipios
     {
         private readonly IRepositorioMunicipio _repoMunicipio;
         public Municipio municipio { get; set; }
+
         public DetailsModel(IRepositorioMunicipio repoMunicipio)
         {
             _repoMunicipio = repoMunicipio;
         }
+
         public IActionResult OnGet(int id)
         {
             municipio = _repoMunicipio.GetMunicipio(id);
